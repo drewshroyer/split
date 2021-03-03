@@ -108,9 +108,11 @@
   font-family: Circular Std;
   color: white;
 }
+
 ::placeholder {
   color: white;
 }
+
 .users-container {
   height: 100%;
   width: 80vw;
@@ -148,6 +150,7 @@ button {
   text-transform: uppercase;
   margin-right: .4rem;
 }
+
 button:hover {
   background-color: transparent;
   transition: 1s;
@@ -159,4 +162,12 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 40px;
   margin: 1%;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-circle-icons {
+  margin-left: 1rem;
 }

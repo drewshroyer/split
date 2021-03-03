@@ -6,7 +6,6 @@ function App() {
     <div className="App">
       <div className="website-container">
       <header className="App-header">
-
         {/* NAV BAR */}
         {/* USERS
         {/* EXPENSES */}

@@ -10,7 +10,7 @@ function UserList() {
         }
         const newUsers = [user, ...users];
         setUsers(newUsers);
-        console.log(...users);
+        console.log(user,...users);
     }   
 
     return (

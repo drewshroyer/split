@@ -1,8 +1,8 @@
 import {useState} from 'react';
 
 const UserForm = (props) => {
-    const [name, setNames] = useState();
-    const [phone, setPhones] = useState();
+    const [name, setNames] = useState('');
+    const [phone, setPhones] = useState('');
 
 
     const handleNameChange = e => {
@@ -15,21 +15,21 @@ const UserForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        props.onSumbit({
+        props.onSubmit({
             id: Math.floor(Math.random() * 100000),
-            name: name,
-            phone: phone
+            text: name,
+            num: phone
         })
 
-        setNames();
-        setPhones();
+        setNames('');
+        setPhones('');
     }
 
     return (
-        <form className="user-input-container" onSumbit={handleSubmit} >
+        <form className="user-input-container" onSubmit={handleSubmit} >
           <div className="top-bar-lunchers">
             <h3>lunchers</h3>
-            <button>Enter</button>
+            <button onClick={handleSubmit}>Enter</button>
           </div>
             <input
               placeholder="Name"
@@ -49,5 +49,6 @@ const UserForm = (props) => {
         </form>
     )
 }
+
 
 export default UserForm;

@@ -1,18 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import Home from "./components/home"
+// import { useState } from 'react';
 
-function App() {
+function App() {  
   return (
     <div className="App">
-      <div className="website-container">
-      <header className="App-header">
-        {/* NAV BAR */}
-        {/* USERS
-        {/* EXPENSES */}
-        {/* WHO OWES */} 
-       <h1>SPLIT</h1>
-       
-      </header>
+      <div className="website-container">  
+        <Home></Home>
       </div>
     </div>
   );

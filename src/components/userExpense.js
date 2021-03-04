@@ -5,9 +5,12 @@ function UserExpense({expenses, user}) {
     
     const amounts = [] 
     for(let i = 0; i<expenses.length; i++) {
-        if(expenses[i].description.includes(user.text)){
-            amounts.push(expenses[i].num / (expenses[i].description.length));
+        let unique = expenses[i].description;
+        unique = unique.filter((v,i)=> unique.indexOf(v) === i);
+        if(unique.includes(user.text)){
+            amounts.push(expenses[i].num / (unique.length));
         }
+        console.log(unique);
     }
     const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
    

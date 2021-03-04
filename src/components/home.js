@@ -6,6 +6,7 @@ import User from "./user"
 
 const Home = () => {
     const [users, setUsers] = useState([]);
+    const [expenses, setExpenses] = useState([]);
 
     const addUser = (user) => {
         if (!user.text || /^\s*$/.test(user.text)) {
@@ -21,6 +22,20 @@ const Home = () => {
         setUsers(removeArr);
     }
 
+    const addExpense = (expense) => {
+        if (!expense.text || /^\s*$/.test(expense.text)) {
+            return;
+        }
+        const newExpenses = [expense, ...expenses];
+        setExpenses(newExpenses);
+        console.log(expense, ...expenses);
+    }   
+
+    const removeExpense = (expenseId) => {
+        const removeArr = [...expenses].filter(expense => expense.expenseId !== expenseId)
+        setExpenses(removeArr);
+    }
+
 
     return (
         <div className="website-container">  
@@ -29,10 +44,10 @@ const Home = () => {
             <div className="users-outer-container">
                 <UserForm onSubmit={addUser}></UserForm>
                 <div className="users-container">
-                    <User users={users} removeUser={removeUser}></User>
+                    <User expenses={expenses} users={users} removeUser={removeUser}></User>
                 </div>
             </div>
-            <ExpenseList users={users}></ExpenseList>
+            <ExpenseList users={users} removeExpense={removeExpense} expenses={expenses} addExpense={addExpense}></ExpenseList>
             </div>
         </div>
 

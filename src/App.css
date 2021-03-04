@@ -151,6 +151,15 @@ button {
   margin-right: .4rem;
 }
 
+.add-expense-botton {
+  background-color: #d3b1d3;
+  border: 2px solid #d3b1d3;
+}
+.add-expense-botton:hover {
+  background-color: transparent;
+  border: transparent;
+}
+
 button:hover {
   background-color: transparent;
   transition: 1s;
@@ -178,7 +187,7 @@ button:hover {
 
 .close-circle-icons {
     display: flex;
-    width: 8vw;
+    width: 10vw;
     justify-content: space-between;
 }
 
@@ -199,7 +208,7 @@ button:hover {
 .expense-input {
   width: 44%;
   background-color: transparent;
-  border: 2px solid #145bd1;
+  border: 2px solid #d3b1d3;
   outline: none;
   border-radius: 40px;
   padding: 0.8rem;
@@ -215,6 +224,7 @@ button:hover {
   align-items: center;
   justify-content: space-between;
   font-family: Circular Std;
+  height: 10vh;
 }
 
 .expense-price-name-inputs {
@@ -224,34 +234,72 @@ button:hover {
   align-items: center;
 }
 
-.spender-options {
-  position: relative;
-  /* padding: .3rem;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 40px;
-  margin: 1%;
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; */
-}
-
 .expenses-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-left: 1rem;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 1rem;
+    border: 3px solid white;
+    margin-top: 2rem;
+    border-radius: 10px;
 }
 
 .expense-index-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: initial;
+    width: 97%;
+    height: 3vh;
+    font-family: Circular Std;
+    margin: .6rem;
+    font-size: 20px;
+}
+
+.spender-options {
   display: flex;
-  justify-content: space-between;
-  width: 95%;
-  height: 5vh;
-  font-size: 18px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.total-per-user {
   font-family: Circular Std;
+  font-size: 23px;
+}
+
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+    width: 7vw;
+    height: 5vh;
+    position: absolute;
+}
+
+.spender-options label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 40px;
+    margin: .2rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.spender-options input[type="checkbox"]:checked + label {
+    background-color:#dcb261;
+}
+
+.spender-options label:hover {
+  background-color: #d3b1d3;
+}
+
+.total-expense {
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 1rem;
+    border-bottom: 3px solid white;
+    height: 7vh;
 }
 
 .restructure-container {

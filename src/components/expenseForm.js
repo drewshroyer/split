@@ -4,7 +4,7 @@ import {useState} from 'react';
 const ExpenseForm = (props) => {
     const [name, setNames] = useState('');
     const [price, setPrices] = useState('');
-    const [spender = [], setSpenders] = useState('')
+    const [spender, setSpenders] = useState([]);
 
     const handleNameChange = e => {
         setNames(e.target.value);
@@ -14,7 +14,7 @@ const ExpenseForm = (props) => {
     }
 
     const handleSpenderChange = e => {
-        setSpenders(e.target.value);
+        setSpenders([...spender, e.target.value]);
     }
 
     const handleSubmit = e => {
@@ -23,25 +23,32 @@ const ExpenseForm = (props) => {
         props.onSubmit({
             expenseId: Math.floor(Math.random() * 100000),
             text: name,
-            num: price,
+            num: parseInt(price),
             description: spender
         })
 
         setNames('');
         setPrices('');
-        setSpenders('');
+        setSpenders([]);
+
+        let currentChecked = document.getElementsByClassName('checkbox');
+        for(let i = 0; i<currentChecked; i++) {
+            currentChecked.checked = false;
+        }
     }
+
     let userOptions = props.users.map((user, index) => (
-        <label htmlFor="radioApple">{user.text}
-        <input type="radio" id="radioApple"></input>
-        </label>
+        <div key={index} className="checkbox">
+            <input type="checkbox" id={`checkbox`} value={user.text}></input>
+            <label htmlFor={user.text}>{user.text}</label>
+         </div>
     ))
 
     return (
         <form className="expense-input-container" onSubmit={handleSubmit} >
           <div className="expenses-inputs">
             <h3>expenses</h3>
-            <button onClick={handleSubmit}>Add Expense</button>
+            <button className="add-expense-botton" onClick={handleSubmit}>Add Expense</button>
           </div>
           <div className="expense-price-name-inputs">
                 <input
@@ -62,11 +69,9 @@ const ExpenseForm = (props) => {
             </div>
             <div className="spender-selection-container">
                 <h3>spender:</h3>
-                <div className="spender-options">
-                    <div class="radio-toolbar" onChange={handleSpenderChange} value={[spender]} name="spender" size={props.users.length} multiple>
+                    <div className="spender-options" onChange={handleSpenderChange} name="spender" size={props.users.length} multiple>
                          {userOptions}   
                     </div>
-                 </div>
             </div>
         </form>
     )

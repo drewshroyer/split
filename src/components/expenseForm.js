@@ -39,11 +39,12 @@ const ExpenseForm = (props) => {
 
     let userOptions = props.users.map((user, index) => (
         <div key={index} className="checkbox">
-            <input type="checkbox" id={`checkbox`} value={user.text}></input>
+            <input type="checkbox"  id={`checkbox`} value={user.text}></input>
             <label htmlFor={user.text}>{user.text}</label>
          </div>
     ))
 
+    
     return (
         <form className="expense-input-container" onSubmit={handleSubmit} >
           <div className="expenses-inputs">

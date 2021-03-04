@@ -7,9 +7,9 @@ function Expense({expenses, removeExpense}) {
         <div className="expense-index-item" key={index}>
             <div>{expense.text}</div> 
             <div>{expense.num}</div> 
-            <div>{expense.description}</div> 
             <div className="close-circle-icons">
-                <IoIosCloseCircle onClick={() => removeExpense(expense.expenseId)}></IoIosCloseCircle>
+                {expense.description}
+                <IoIosCloseCircle onClick={() => removeExpense(expense.expenseId)}>                 {expense.description}</IoIosCloseCircle>
             </div>
         </div>
     ))

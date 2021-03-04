@@ -18,7 +18,8 @@ const UserForm = (props) => {
         props.onSubmit({
             id: Math.floor(Math.random() * 100000),
             text: name,
-            num: phone
+            num: phone,
+            due: 0.00
         })
 
         setNames('');

@@ -41,6 +41,7 @@
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: fixed;
 }
 
 .nav-bar-container {
@@ -69,22 +70,21 @@
 }
 
 .users-outer-container {
-  height: 24vh;
-  width: 100vw;
+  height: 100vh;
+  width: 40vw;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 3vh;
 }
 
 .user-input-container {
   font-family: Circular Std;
-  height: 100%;
-  width: 20vw;
+  height: 25vh;
+  width: 40vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-left: 1rem;
 }
@@ -93,7 +93,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 18vw;
+  width: 34vw;
 }
 
 .user-input {
@@ -115,12 +115,12 @@
 
 .users-container {
   height: 100%;
-  width: 80vw;
+  width: 40vw;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 1rem;
 }
 
 a {
@@ -158,24 +158,34 @@ button:hover {
 }
 
 .user-index-item {
-  padding: 1.6rem;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 40px;
-  margin: 1%;
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    margin: 1%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 31vw;
+}
+
+.expenses-outer-container {
+    display: flex;
+    width: 60vw;
+    height: 100%;
+    flex-direction: column;
 }
 
 .close-circle-icons {
-  margin-left: 1rem;
+    display: flex;
+    width: 8vw;
+    justify-content: space-between;
 }
 
 .expense-input-container {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 96%;
     margin-left: 1rem;
 }
 
@@ -183,7 +193,6 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
     font-family: Circular Std;
 }
 
@@ -228,7 +237,7 @@ button:hover {
 }
 
 .expenses-container {
-  width: 45%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -239,8 +248,20 @@ button:hover {
 .expense-index-item {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 95%;
   height: 5vh;
   font-size: 18px;
   font-family: Circular Std;
+}
+
+.restructure-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2vh;
+}
+
+.total-expense-container {
+  font-size: 32px;
+  color: white;
+  
 }

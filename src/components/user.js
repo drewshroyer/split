@@ -7,6 +7,7 @@ function User({users, removeUser}) {
         <div className="user-index-item" key={index}>
             <div>{user.text}</div> 
             <div className="close-circle-icons">
+                {user.due}
                 <IoIosCloseCircle onClick={() => removeUser(user.id)}></IoIosCloseCircle>
             </div>
         </div>

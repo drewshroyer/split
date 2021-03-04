@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ExpenseForm from "./expenseForm";
-import Expense from "./expense"
+import Expense from "./expense";
+import TotalExpense from "./totalExpense";
 
 function ExpenseList({users}) {
     const [expenses, setExpenses] = useState([]);
@@ -19,6 +20,7 @@ function ExpenseList({users}) {
         setExpenses(removeArr);
     }
 
+ 
     return (
         <div>
              <div className="expenses-outer-container">
@@ -26,6 +28,7 @@ function ExpenseList({users}) {
                 <div className="expenses-container">
                     <Expense expenses={expenses} removeExpense={removeExpense}></Expense>
                 </div>
+                <TotalExpense expenses={expenses}></TotalExpense>
             </div>
         </div>
     )

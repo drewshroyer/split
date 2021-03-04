@@ -25,6 +25,7 @@ const Home = () => {
     return (
         <div className="website-container">  
             <NavBar></NavBar>
+            <div className="restructure-container">
             <div className="users-outer-container">
                 <UserForm onSubmit={addUser}></UserForm>
                 <div className="users-container">
@@ -32,6 +33,7 @@ const Home = () => {
                 </div>
             </div>
             <ExpenseList users={users}></ExpenseList>
+            </div>
         </div>
 
     )

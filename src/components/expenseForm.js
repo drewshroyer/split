@@ -33,18 +33,25 @@ const ExpenseForm = (props) => {
 
         let currentChecked = document.getElementsByClassName('checkbox');
         for(let i = 0; i<currentChecked; i++) {
-            currentChecked.checked = false;
+            currentChecked[i].prop( "checked", false );
+            currentChecked[i].style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
         }
+        let currentLabels = document.getElementsByClassName('spender-options');
+        for(let i = 0; i<currentLabels; i++) {
+            currentLabels[i].style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+        }
+
     }
+
 
     let userOptions = props.users.map((user, index) => (
         <div key={index} className="checkbox">
-            <input type="checkbox"  id={`checkbox`} value={user.text}></input>
-            <label htmlFor={user.text}>{user.text}</label>
+            <input type="checkbox"  id={`checkbox`} value={user.text} onChange={handleSpenderChange}></input>
+            <label className="checkbox-label" htmlFor={user.text}>{user.text}</label>
          </div>
     ))
 
-    
+
     return (
         <form className="expense-input-container" onSubmit={handleSubmit} >
           <div className="expenses-inputs">
@@ -70,7 +77,7 @@ const ExpenseForm = (props) => {
             </div>
             <div className="spender-selection-container">
                 <h3>spender:</h3>
-                    <div className="spender-options" onChange={handleSpenderChange} name="spender" size={props.users.length} multiple>
+                    <div className="spender-options" name="spender" size={props.users.length} multiple>
                          {userOptions}   
                     </div>
             </div>

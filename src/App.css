@@ -287,6 +287,9 @@ button:hover {
 .spender-options input[type="checkbox"]:checked + label {
     background-color:#dcb261;
 }
+.spender-options input[type="checkbox"]:checked + label {
+    background-color:#dcb261;
+}
 
 .spender-options label:hover {
   background-color: #d3b1d3;

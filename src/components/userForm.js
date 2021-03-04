@@ -28,7 +28,7 @@ const UserForm = (props) => {
     return (
         <form className="user-input-container" onSubmit={handleSubmit} >
           <div className="top-bar-lunchers">
-            <h3>lunchers</h3>
+            <h3>crew</h3>
             <button onClick={handleSubmit}>Enter</button>
           </div>
             <input

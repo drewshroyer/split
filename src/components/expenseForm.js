@@ -1,5 +1,4 @@
 import {useState} from 'react';
-// import ExpenseList from './expenseList';
 
 const ExpenseForm = (props) => {
     const [name, setNames] = useState('');
@@ -34,7 +33,7 @@ const ExpenseForm = (props) => {
         props.onSubmit({
             expenseId: Math.floor(Math.random() * 100000),
             text: name,
-            num: parseInt(price),
+            num: price,
             description: spender
         })
 

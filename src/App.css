@@ -195,6 +195,26 @@ button:hover {
     justify-content: space-between;
 }
 
+.close-circle-icons-large {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.item-container {
+  display: flex;
+  font-size: 16px;
+  
+}
+
+.item {
+    margin-right: .5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    margin-bottom: .2rem;
+    padding: .15rem 1rem 0 1rem;
+} 
+
 .expense-input-container {
     display: flex;
     flex-direction: column;
@@ -356,4 +376,9 @@ h4 {
   overflow: scroll;
   height: 53vh;
   border-bottom: 3px solid white;
+}
+
+.line-item-expense {
+    margin-right: 1rem;
+    margin-left: 1rem;
 }

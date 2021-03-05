@@ -11,7 +11,7 @@ function UserExpense({expenses, user}) {
             amounts.push(expenses[i].num / (unique.length));
         }
     }
-    const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+    const total = amounts.reduce((acc, item) => (acc += item), 0);
    
     return (
         <div className="user-expense">

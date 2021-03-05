@@ -10,7 +10,9 @@ function ExpenseList({users, addExpense, expenses, removeExpense}) {
              <div className="expenses-outer-container">
                 <ExpenseForm users={users} onSubmit={addExpense}></ExpenseForm>
                 <div className="expenses-container">
-                    <Expense expenses={expenses} removeExpense={removeExpense}></Expense>
+                    <div className="line-item-expense-container">
+                        <Expense expenses={expenses} removeExpense={removeExpense}></Expense>
+                    </div>
                     <TotalExpense expenses={expenses}></TotalExpense>
                 </div>  
             </div>

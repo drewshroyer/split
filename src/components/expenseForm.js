@@ -14,12 +14,23 @@ const ExpenseForm = (props) => {
     }
 
     const handleSpenderChange = e => {
-        setSpenders([...spender, e.target.value]);
+        let array = [];
+        var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+          for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                array.push(checkboxes[i].value);
+            }
+        }
+        setSpenders(array);
+        console.log(array);
     }
+
 
     const handleSubmit = e => {
         e.preventDefault();
 
+        handleSpenderChange();
+    
         props.onSubmit({
             expenseId: Math.floor(Math.random() * 100000),
             text: name,
@@ -30,23 +41,12 @@ const ExpenseForm = (props) => {
         setNames('');
         setPrices('');
         setSpenders([]);
-
-        let currentChecked = document.getElementsByClassName('checkbox');
-        for(let i = 0; i<currentChecked; i++) {
-            currentChecked[i].prop( "checked", false );
-            currentChecked[i].style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
-        }
-        let currentLabels = document.getElementsByClassName('spender-options');
-        for(let i = 0; i<currentLabels; i++) {
-            currentLabels[i].style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
-        }
-
     }
 
 
     let userOptions = props.users.map((user, index) => (
-        <div key={index} className="checkbox">
-            <input type="checkbox"  id={`checkbox`} value={user.text} onChange={handleSpenderChange}></input>
+        <div key={index} className="checkbox" onChange={handleSpenderChange} >
+            <input type="checkbox"  id={`checkbox`} value={user.text} ></input>
             <label className="checkbox-label" htmlFor={user.text}>{user.text}</label>
          </div>
     ))

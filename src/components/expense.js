@@ -7,7 +7,7 @@ function Expense({expenses, removeExpense}) {
         <div className="expense-index-item" key={index}>
             <div>{expense.text}</div> 
             <div className="close-circle-icons">
-                <div>{expense.num}</div> 
+                <div>{expense.num.toFixed(2)}</div> 
                 <IoIosCloseCircle onClick={() => removeExpense(expense.expenseId)}>                 {expense.description}</IoIosCloseCircle>
             </div>
         </div>

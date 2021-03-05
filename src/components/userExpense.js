@@ -10,7 +10,6 @@ function UserExpense({expenses, user}) {
         if(unique.includes(user.text)){
             amounts.push(expenses[i].num / (unique.length));
         }
-        console.log(unique);
     }
     const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
    

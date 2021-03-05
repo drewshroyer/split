@@ -47,6 +47,7 @@ const Home = () => {
                     <User expenses={expenses} users={users} removeUser={removeUser}></User>
                 </div>
             </div>
+            <div className="thin-divider"></div>
             <ExpenseList users={users} removeExpense={removeExpense} expenses={expenses} addExpense={addExpense}></ExpenseList>
             </div>
         </div>

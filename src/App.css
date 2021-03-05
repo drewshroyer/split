@@ -154,7 +154,10 @@ button {
 .add-expense-botton {
   background-color: #d3b1d3;
   border: 2px solid #d3b1d3;
+  width: 30%;
+  margin-right: 0rem;
 }
+
 .add-expense-botton:hover {
   background-color: transparent;
   border: transparent;
